@@ -24,13 +24,13 @@ const unit_select_manager = new UnitSelectManager(
             dom_getter_element: () => document.querySelector<HTMLSelectElement>('#unit-1'),
             default_unit: default_unit_1,
             on_change: (new_unit: string) => {
-                unit_1_number.update_unit(new_unit);
+                unit_1_number.set_unit(new_unit);
             }
         },{
             dom_getter_element: () => document.querySelector<HTMLSelectElement>('#unit-2'),
             default_unit: default_unit_2,
             on_change: (new_unit: string) => {
-                unit_2_number.update_unit(new_unit);
+                unit_2_number.set_unit(new_unit);
             }
         }
     ]
@@ -45,7 +45,7 @@ const update_amount_input_1 = () => {
     const unit_1 = document.querySelector<HTMLSelectElement>('#unit-1')?.value
     const unit_1_val = document.querySelector<HTMLInputElement>('#amount-1-input')?.value
     if (unit_1 && unit_1_val && check_if_input_is_valid(unit_1_val)) {
-        unit_1_number.update_amount(parseFloat(unit_1_val));
+        unit_1_number.set_amount(parseFloat(unit_1_val));
     }
 }
 
@@ -53,7 +53,7 @@ const update_amount_input_2 = () => {
     const unit_2 = document.querySelector<HTMLSelectElement>('#unit-2')?.value
     const unit_2_val = document.querySelector<HTMLInputElement>('#amount-2-input')?.value
     if (unit_2 && unit_2_val && check_if_input_is_valid(unit_2_val)) {
-        unit_2_number.update_amount(parseFloat(unit_2_val));
+        unit_2_number.set_amount(parseFloat(unit_2_val));
     }
 }
 
